@@ -9,15 +9,14 @@ BASE=$1
 SENSOR=$2
 ARCH="$(uname -m)"
 echo $ARCH
-#echo "
-#______ _____________   _________ ________ _______ ________ _______ ________
-#___  / ____  _/___  | / /__  __ \___  __ \__  __ \___  __ )__  __ \___  __/
-#__  /   __  /  __   |/ / _  / / /__  /_/ /_  / / /__  __  |_  / / /__  /   
-#_  /_____/ /   _  /|  /  / /_/ / _  _, _/ / /_/ / _  /_/ / / /_/ / _  /    
-#/_____//___/   /_/ |_/   \____/  /_/ |_|  \____/  /_____/  \____/  /_/     
-#                    
-#                            http://linorobot.org                                                                          
-#"
+echo "
+______ _____________   _________ ________ _______ ________ _______ ________
+___  / ____  _/___  | / /__  __ \___  __ \__  __ \___  __ )__  __ \___  __/
+__  /   __  /  __   |/ / _  / / /__  /_/ /_  / / /__  __  |_  / / /__  /   
+__ /_____/ /   _  /|  /  / /_/ / _  _, _/ / /_/ / _  /_/ / / /_/ / _  /    
+_ /____//___/   /_/ |_/   \____/  /_/ |_|  \____/  /_____/  \____/  /_/     
+"                    
+
 if [ "$3" != "test" ]
     then
         if [ "$*" == "" ]
@@ -30,7 +29,7 @@ if [ "$3" != "test" ]
                 
         elif [[ "$1" != "2wd" && "$1" != "4wd" && "$1" != "mecanum" && "$1" != "ackermann" ]]
             then
-                echo "Invalid linorobot base: $1"
+                echo "Invalid mobi_robot base: $1"
                 echo
                 echo "Valid Options:"
                 echo "2wd"
@@ -42,7 +41,7 @@ if [ "$3" != "test" ]
 
         elif [[ "$2" != "xv11" && "$2" != "rplidar" && "$2" != "kinect" && "$2" != "realsense" ]]
             then
-                echo "Invalid linorobot base: $2"
+                echo "Invalid mobi_robot base: $2"
                 echo
                 echo "Valid Options:"
                 echo "xv11"
@@ -60,7 +59,7 @@ if [ "$3" != "test" ]
         fi
 
         echo
-        echo -n "You are installing ROS-$ROSDISTRO Linorobot for $BASE base with a $SENSOR sensor. Enter [y] to continue. " 
+        echo -n "You are installing ROS-$ROSDISTRO Mobi_robot for $BASE base with a $SENSOR sensor. Enter [y] to continue. " 
         read reply
         if [[ "$reply" != "y" && "$reply" != "Y" ]]
             then
