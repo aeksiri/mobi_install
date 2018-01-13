@@ -146,6 +146,8 @@ cd teensy/firmware
 export PLATFORMIO_CI_SRC=$PWD/src/firmware.ino
 platformio ci --project-conf=./platformio.ini --lib="./lib/ros_lib" --lib="./lib/config"  --lib="./lib/motor"  --lib="./lib/kinematics"  --lib="./lib/pid"  --lib="./lib/imu"
 
+chmod +x ~/mobi_robot_ws/src/mobi_pid/cfg/mobiPID.cfg
+
 cd ~/mobi_robot_ws
 catkin_make
 
