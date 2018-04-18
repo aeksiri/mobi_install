@@ -39,7 +39,7 @@ if [ "$3" != "test" ]
                 echo
                 exit 1
 
-        elif [[ "$2" != "xv11" && "$2" != "rplidar" && "$2" != "kinect" && "$2" != "realsense" ]]
+        elif [[ "$2" != "xv11" && "$2" != "rplidar" && "$2" != "kinect" && "$2" != "realsense" && "$2" != "sick-tim310-1030000S01" ]]
             then
                 echo "Invalid mobi_robot base: $2"
                 echo
@@ -48,6 +48,7 @@ if [ "$3" != "test" ]
                 echo "rplidar"
                 echo "kinect"
                 echo "realsense"
+                echo "sick-tim310-1030000S01"
                 echo
                 exit 1
         
@@ -136,6 +137,11 @@ git clone https://github.com/aeksiri/mobi_udev.git
 if [[ "$SENSOR" == "rplidar" || "$3" == "test" ]]
     then
         git clone https://github.com/robopeak/rplidar_ros.git
+
+elif [[ "$SENSOR" == "sick-tim310-1030000S01" || "$3" == "test" ]]
+    then
+        git clone https://github.com/uos/sick_tim.git
+
 fi
 
 cd mobi_robot
